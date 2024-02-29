@@ -1,0 +1,48 @@
+{
+    "global": {
+        "entities": {
+            "ovv_entity_type": "Entity type | Entity types"
+        }
+    },
+
+    "sw-privileges": {
+        "permissions": {
+            "ovv_entity_type": {
+                "label": "Entity types"
+            }
+        }
+    },
+
+    "sw-profile": {
+        "tabSearchPreferences": {
+            "modules": {
+                "ovv_entity_type": {
+                    "name": "Name"
+                }
+            }
+        }
+    },
+
+    "ovv": {
+        "entityType": {
+            "active": "Active",
+            "name": "Name",
+            "slug": "Slug",
+            "buttonAdd": "Add entity type",
+            "empty": "No entity types yet",
+            "createdAt": "Created at",
+            "refresh": "Refresh",
+            "entityManage": "Manage entity types here",
+            "entityNew": "New entity type",
+            "entities": "Entity types",
+            "entity": "Entity type",
+            "types": "Types",
+
+            "placeholder": {
+                "name": "Enter entity type name...",
+                "slug": "Enter entity type slug...",
+                "searchBar": "Search entity types..."
+            }
+        }
+    }
+}

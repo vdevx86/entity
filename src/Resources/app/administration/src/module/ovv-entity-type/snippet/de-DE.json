@@ -1,0 +1,48 @@
+{
+    "global": {
+        "entities": {
+            "ovv_entity_type": "Entitätstyp | Entitätstypen"
+        }
+    },
+
+    "sw-privileges": {
+        "permissions": {
+            "ovv_entity_type": {
+                "label": "Entitätstypen"
+            }
+        }
+    },
+
+    "sw-profile": {
+        "tabSearchPreferences": {
+            "modules": {
+                "ovv_entity_type": {
+                    "name": "Name"
+                }
+            }
+        }
+    },
+
+    "ovv": {
+        "entityType": {
+            "active": "Activ",
+            "name": "Name",
+            "slug": "Slug",
+            "buttonAdd": "Entitätstyp hinzufügen",
+            "empty": "Noch keine Entitätstypen",
+            "createdAt": "Erstellt am",
+            "refresh": "Aktualisieren",
+            "entityManage": "Verwalten Sie hier Entitätstypen",
+            "entityNew": "Neuer Entitätstyp",
+            "entities": "Entitätstypen",
+            "entity": "Entitätstyp",
+            "types": "Typen",
+
+            "placeholder": {
+                "name": "Gib einen Namen ein ...",
+                "slug": "Gib einen Slug ein ...",
+                "searchBar": "Suchen Sie nach Entitätstypen ..."
+            }
+        }
+    }
+}

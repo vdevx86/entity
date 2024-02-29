@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * @author Vazgen Ovakimyan
+ * @link   https://www.linkedin.com/in/vdevx86
+ */
+-->
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="ovv.entity.context-struct" class="Ovv\Entity\Service\ContextStruct"/>
+
+        <service id="Ovv\Entity\Service\ContentProcessor">
+            <argument type="service" id="ovv_entity.repository"/>
+            <argument type="service" id="ovv_entity_renderer.repository"/>
+        </service>
+
+        <service id="ovv.entity.twig-extension-service" class="Ovv\Entity\Service\TwigExtensionService">
+            <argument type="service" id="ovv_entity.repository"/>
+            <argument type="service" id="ovv_entity_type.repository"/>
+            <argument type="service" id="ovv_entity_template.repository"/>
+            <argument type="service" id="ovv_entity_renderer.repository"/>
+            <argument type="service" id="ovv.entity.context-struct"/>
+        </service>
+    </services>
+</container>

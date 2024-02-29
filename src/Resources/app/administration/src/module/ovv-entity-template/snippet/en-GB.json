@@ -1,0 +1,49 @@
+{
+    "global": {
+        "entities": {
+            "ovv_entity_template": "Entity template | Entity templates"
+        }
+    },
+
+    "sw-privileges": {
+        "permissions": {
+            "ovv_entity_template": {
+                "label": "Entity templates"
+            }
+        }
+    },
+
+    "sw-profile": {
+        "tabSearchPreferences": {
+            "modules": {
+                "ovv_entity_template": {
+                    "name": "Name",
+                    "template": "Template"
+                }
+            }
+        }
+    },
+
+    "ovv": {
+        "entityTemplate": {
+            "name": "Name",
+            "slug": "Slug",
+            "buttonAdd": "Add entity template",
+            "empty": "No entity templates yet",
+            "createdAt": "Created at",
+            "refresh": "Refresh",
+            "entityManage": "Manage entity templates here",
+            "entityNew": "New entity template",
+            "entities": "Entity templates",
+            "entity": "Entity template",
+            "template": "Template",
+            "templates": "Templates",
+
+            "placeholder": {
+                "name": "Enter entity template name...",
+                "slug": "Enter entity template slug...",
+                "searchBar": "Search entity templates..."
+            }
+        }
+    }
+}

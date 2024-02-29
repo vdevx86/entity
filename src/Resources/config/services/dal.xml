@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * @author Vazgen Ovakimyan
+ * @link   https://www.linkedin.com/in/vdevx86
+ */
+-->
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\Entity\EntityDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\Entity\Aggregate\EntityTranslation\EntityTranslationDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\Entity\Aggregate\EntityCustomFieldSet\EntityCustomFieldSetDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\EntityType\EntityTypeDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\EntityType\Aggregate\EntityTypeTranslation\EntityTypeTranslationDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\EntityTemplate\EntityTemplateDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\EntityTemplate\Aggregate\EntityTemplateTranslation\EntityTemplateTranslationDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\Entity\Aggregate\EntityMedia\EntityMediaDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\EntityRenderer\EntityRendererDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\EntityRenderer\Aggregate\EntityRendererEntityType\EntityRendererEntityTypeDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Ovv\Entity\DataAbstractionLayer\Entity\EntityRenderer\Aggregate\EntityRendererEntity\EntityRendererEntityDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+    </services>
+</container>

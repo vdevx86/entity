@@ -1,0 +1,20 @@
+@import "~scss/variables";
+
+$ovv-entity-list-color-error: $color-crimson-500;
+$ovv-entity-list-color-success: $color-emerald-500;
+
+.ovv-entity-list {
+    .is--inactive {
+        width: 16px;
+        height: 16px;
+        color: $ovv-entity-list-color-error;
+        padding: 3px;
+    }
+
+    .is--active {
+        width: 16px;
+        height: 16px;
+        color: $ovv-entity-list-color-success;
+        padding: 4px 2px 3px;
+    }
+}

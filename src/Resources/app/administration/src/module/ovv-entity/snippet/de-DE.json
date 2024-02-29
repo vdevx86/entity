@@ -1,0 +1,55 @@
+{
+    "global": {
+        "entities": {
+            "ovv_entity": "Entität | Entitäten"
+        }
+    },
+
+    "sw-privileges": {
+        "permissions": {
+            "ovv_entity": {
+                "label": "Entitäten"
+            }
+        }
+    },
+
+    "sw-profile": {
+        "tabSearchPreferences": {
+            "modules": {
+                "ovv_entity": {
+                    "name": "Name",
+                    "description": "Beschreibung"
+                }
+            }
+        }
+    },
+
+    "ovv": {
+        "entity": {
+            "active": "Activ",
+            "name": "Name",
+            "slug": "Slug",
+            "description": "Beschreibung",
+            "type": "Typ",
+            "customFields": "Zusatzfelder",
+            "buttonAdd": "Entität hinzufügen",
+            "empty": "Noch keine Entität",
+            "createdAt": "Erstellt am",
+            "refresh": "Aktualisieren",
+            "searchStrings": "Suchbegriffe",
+            "entityManage": "Verwalten Sie hier Entitäten",
+            "entityNew": "Neues Entität",
+            "entities": "Entitäten",
+            "entity": "Entität",
+            "media": "Media",
+
+            "placeholder": {
+                "name": "Gib einen Namen ein ...",
+                "slug": "Gib einen Slug ein ...",
+                "description": "Gib eine Beschreibung ein ...",
+                "type": "Entitätstyp auswählen ...",
+                "searchBar": "Suchen Sie nach Entitäten ..."
+            }
+        }
+    }
+}

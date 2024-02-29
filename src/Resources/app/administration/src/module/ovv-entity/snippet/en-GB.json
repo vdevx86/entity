@@ -1,0 +1,55 @@
+{
+    "global": {
+        "entities": {
+            "ovv_entity": "Entity | Entities"
+        }
+    },
+
+    "sw-privileges": {
+        "permissions": {
+            "ovv_entity": {
+                "label": "Entities"
+            }
+        }
+    },
+
+    "sw-profile": {
+        "tabSearchPreferences": {
+            "modules": {
+                "ovv_entity": {
+                    "name": "Name",
+                    "description": "Description"
+                }
+            }
+        }
+    },
+
+    "ovv": {
+        "entity": {
+            "active": "Active",
+            "name": "Name",
+            "slug": "Slug",
+            "description": "Description",
+            "type": "Type",
+            "customFields": "Custom fields",
+            "buttonAdd": "Add entity",
+            "empty": "No entities yet",
+            "createdAt": "Created at",
+            "refresh": "Refresh",
+            "searchStrings": "Search terms",
+            "entityManage": "Manage entities here",
+            "entityNew": "New entity",
+            "entities": "Entities",
+            "entity": "Entity",
+            "media": "Media",
+
+            "placeholder": {
+                "name": "Enter entity name...",
+                "slug": "Enter entity slug...",
+                "description": "Enter entity description...",
+                "type": "Select entity type...",
+                "searchBar": "Search entities..."
+            }
+        }
+    }
+}

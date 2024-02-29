@@ -1,0 +1,49 @@
+{
+    "global": {
+        "entities": {
+            "ovv_entity_template": "Entität-Template | Entität-Templates"
+        }
+    },
+
+    "sw-privileges": {
+        "permissions": {
+            "ovv_entity_template": {
+                "label": "Entität-Templates"
+            }
+        }
+    },
+
+    "sw-profile": {
+        "tabSearchPreferences": {
+            "modules": {
+                "ovv_entity_template": {
+                    "name": "Name",
+                    "template": "Template"
+                }
+            }
+        }
+    },
+
+    "ovv": {
+        "entityTemplate": {
+            "name": "Name",
+            "slug": "Slug",
+            "buttonAdd": "Entität-Template hinzufügen",
+            "empty": "Noch keine Entität-Templates",
+            "createdAt": "Erstellt am",
+            "refresh": "Aktualisieren",
+            "entityManage": "Verwalten Sie hier Entität-Templates",
+            "entityNew": "Neuer Entität-Template",
+            "entities": "Entität-Templates",
+            "entity": "Entität-Template",
+            "template": "Template",
+            "templates": "Templates",
+
+            "placeholder": {
+                "name": "Gib einen Namen ein ...",
+                "slug": "Gib einen Slug ein ...",
+                "searchBar": "Suchen Sie nach Entität-Templates ..."
+            }
+        }
+    }
+}

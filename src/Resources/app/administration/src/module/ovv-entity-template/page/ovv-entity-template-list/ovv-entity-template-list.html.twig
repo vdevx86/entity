@@ -1,0 +1,119 @@
+{% block ovv_entity_template_list %}
+<sw-page class="ovv-entity-template-list">
+
+    {% block ovv_entity_template_list_search_bar %}
+    <template #search-bar>
+        <sw-search-bar
+            :initial-search="term"
+            initial-search-type="ovv_entity_template"
+            :placeholder="t('placeholder.searchBar')"
+            @search="onSearch"
+        />
+    </template>
+    {% endblock %}
+
+    {% block ovv_entity_template_list_smart_bar_header %}
+    <template #smart-bar-header>
+
+        {% block ovv_entity_template_list_smart_bar_header_title %}
+        <h2>
+
+            {% block ovv_entity_template_list_smart_bar_header_title_text %}
+            <strong>{{ t('entities') }}</strong>
+            {% endblock %}
+
+            {% block ovv_entity_template_list_smart_bar_header_title_amount %}
+            <span v-if="!isLoading" class="sw-page__smart-bar-amount">({{ total }})</span>
+            {% endblock %}
+
+        </h2>
+        {% endblock %}
+
+    </template>
+    {% endblock %}
+
+    {% block ovv_entity_template_list_smart_bar_actions %}
+    <template #smart-bar-actions>
+
+        {% block ovv_entity_template_list_add_button %}
+        <sw-button
+            :router-link="createRoute"
+            :disabled="!aclCan('creator')"
+            variant="primary"
+        >
+            {{ t('buttonAdd') }}
+        </sw-button>
+        {% endblock %}
+
+    </template>
+    {% endblock %}
+
+    {% block ovv_entity_template_list %}
+    <template #content>
+
+        {% block ovv_entity_template_list_grid_loader %}
+        <sw-loader v-if="isLoading"/>
+        {% endblock %}
+
+        {% block ovv_entity_template_list_grid_loading_ready %}
+        <template v-else>
+
+            {% block ovv_entity_template_list_grid %}
+            <sw-entity-listing
+                v-if="hasItems"
+                detail-route="ovv.entity.template.detail"
+                :repository="repository"
+                :items="items"
+                :columns="columns"
+                :is-loading="isLoading"
+                :criteria-limit="limit"
+                :sort-by="sortBy"
+                :sort-direction="sortDirection"
+                :natural-sorting="naturalSorting"
+                :allow-edit="aclCan('editor')"
+                :allow-inlineEdit="aclCan('editor')"
+                :allow-delete="aclCan('deleter')"
+                :show-selections="aclCan('deleter')"
+                @update-records="updateTotal"
+                @page-change="onPageChange"
+                @column-sort="onSortColumn"
+                @selection-change="updateSelection"
+            >
+
+                {% block ovv_entity_template_list_grid_created_at %}
+                <template #column-createdAt="{ item }">
+                    {{ item.createdAt | date }}
+                </template>
+                {% endblock %}
+
+            </sw-entity-listing>
+            {% endblock %}
+
+            {% block ovv_entity_template_list_grid_empty_state %}
+            <sw-empty-state v-else :title="t('empty')"/>
+            {% endblock %}
+
+        </template>
+        {% endblock %}
+
+    </template>
+    {% endblock %}
+
+    {% block ovv_entity_template_list_sidebar %}
+    <template #sidebar>
+        <sw-sidebar>
+
+            {% block ovv_entity_template_list_sidebar_refresh %}
+            <sw-sidebar-item
+                icon="regular-undo"
+                :title="t('refresh')"
+                @click="onRefresh"
+            />
+            {% endblock %}
+
+        </sw-sidebar>
+    </template>
+    {% endblock %}
+
+</sw-page>
+{% endblock %}

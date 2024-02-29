@@ -1,0 +1,161 @@
+{% block ovv_entity_renderer_detail %}
+<sw-page class="ovv-entity-renderer-detail">
+
+    {% block ovv_entity_renderer_detail_header %}
+    <template #smart-bar-header>
+        <h2>{{ title }}</h2>
+    </template>
+    {% endblock %}
+
+    {% block ovv_entity_renderer_detail_actions %}
+    <template #smart-bar-actions>
+
+        {% block ovv_entity_renderer_detail_actions_abort %}
+        <sw-button :disabled="isLoading" @click="onCancel">
+            {{ $tc('global.default.cancel') }}
+        </sw-button>
+        {% endblock %}
+
+        {% block ovv_entity_renderer_detail_actions_save %}
+        <sw-button-process
+            variant="primary"
+            :disabled="!canSave"
+            :process-success="isSaveSuccessful"
+            @process-finish="onSaveFinish"
+            @click="onSave"
+        >
+            {{ $tc('global.default.save') }}
+        </sw-button-process>
+        {% endblock %}
+
+    </template>
+    {% endblock %}
+
+    {% block ovv_entity_renderer_detail_content %}
+    <template #content>
+        <sw-card-view>
+
+            {% block ovv_entity_renderer_detail_card_id %}
+            <sw-card
+                v-if="cardIdIsVisible"
+                position-identifier="ovv-entity-renderer-detail-id-card"
+                :is-loading="isLoading"
+            >
+                <div>ID: <strong>{{ entity.autoIncrement }}</strong></div>
+            </sw-card>
+            {% endblock %}
+
+            {% block ovv_entity_renderer_detail_card_general %}
+            <sw-card
+                v-if="entity"
+                position-identifier="ovv-entity-renderer-detail-general-card"
+                :is-loading="isLoading"
+            >
+
+                {% block ovv_entity_renderer_detail_active %}
+                <sw-switch-field
+                    v-model="entity.active"
+                    :label="t('active')"
+                    :disabled="!canEdit"
+                    no-margin-top
+                    bordered
+                />
+                {% endblock %}
+
+                {% block ovv_entity_renderer_detail_name %}
+                <sw-text-field
+                    v-model="entity.name"
+                    :label="t('name')"
+                    :placeholder="pholder('name')"
+                    :disabled="!canEdit"
+                    :error="entityNameError"
+                    :required="true"
+                />
+                {% endblock %}
+
+                {% block ovv_entity_renderer_detail_slug %}
+                <sw-text-field
+                    v-model="entity.slug"
+                    :label="t('slug')"
+                    :placeholder="pholder('slug')"
+                    :disabled="!canEdit"
+                    :error="entitySlugError"
+                />
+                {% endblock %}
+
+                {% block ovv_entity_renderer_detail_description %}
+                <sw-textarea-field
+                    v-model="entity.description"
+                    :label="t('description')"
+                    :disabled="!canEdit"
+                    :error="entityDescriptionError"
+                    maxlength="65535"
+                    class="sw-field--no-margin-bottom"
+                />
+                {% endblock %}
+
+            </sw-card>
+            {% endblock %}
+
+            {% block ovv_entity_renderer_detail_card_parameters %}
+            <sw-card
+                v-if="entity"
+                position-identifier="ovv-entity-renderer-detail-parameters-card"
+                :is-loading="isLoading"
+            >
+
+                {% block ovv_entity_renderer_detail_template %}
+                <sw-entity-single-select
+                    v-model="entity.templateId"
+                    :label="t('template')"
+                    :disabled="!canEdit"
+                    entity="ovv_entity_template"
+                    show-clearable-button
+                    required
+                    class="sw-field--no-margin-bottom"
+                />
+                {% endblock %}
+
+            </sw-card>
+            {% endblock %}
+
+            {% block ovv_entity_renderer_detail_card_types %}
+            <sw-many-to-many-assignment-card
+                v-if="entity"
+                :title="t('types')"
+                :entity-collection="entity.types"
+                :columns="typeColumns"
+                :is-loading="isLoading"
+                :disabled="!canSaveEdit"
+                :local-mode="isNew"
+                :placeholder="t('associatedTypesPlaceholder')"
+            >
+                <template #empty-state>
+                    <p>{{ t('associatedTypesEmptyStateDescription') }}</p>
+                </template>
+            </sw-many-to-many-assignment-card>
+            {% endblock %}
+
+            {% block ovv_entity_renderer_detail_card_entities %}
+            <sw-many-to-many-assignment-card
+                v-if="entity"
+                :title="t('entities')"
+                :entity-collection="entity.entities"
+                :columns="entityColumns"
+                :is-loading="isLoading"
+                :disabled="!canSaveEdit"
+                :local-mode="isNew"
+                :placeholder="t('associatedEntitiesPlaceholder')"
+            >
+                <template #empty-state>
+                    <p>{{ t('associatedEntitiesEmptyStateDescription') }}</p>
+                </template>
+            </sw-many-to-many-assignment-card>
+            {% endblock %}
+
+        </sw-card-view>
+    </template>
+    {% endblock %}
+
+</sw-page>
+{% endblock %}

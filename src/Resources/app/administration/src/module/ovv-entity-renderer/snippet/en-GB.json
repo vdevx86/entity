@@ -1,0 +1,59 @@
+{
+    "global": {
+        "entities": {
+            "ovv_entity_renderer": "Entity renderer | Entity renderers"
+        }
+    },
+
+    "sw-privileges": {
+        "permissions": {
+            "ovv_entity_renderer": {
+                "label": "Entity renderers"
+            }
+        }
+    },
+
+    "sw-profile": {
+        "tabSearchPreferences": {
+            "modules": {
+                "ovv_entity_renderer": {
+                    "name": "Name",
+                    "description": "Description"
+                }
+            }
+        }
+    },
+
+    "ovv": {
+        "entityRenderer": {
+            "active": "Active",
+            "name": "Name",
+            "slug": "Slug",
+            "description": "Description",
+            "buttonAdd": "Add entity renderer",
+            "empty": "No entity renderers yet",
+            "createdAt": "Created at",
+            "refresh": "Refresh",
+            "entityManage": "Manage entity renderers here",
+            "entityNew": "New entity renderer",
+            "entities": "Entity renderers",
+            "entity": "Entity renderer",
+            "renderers": "Renderers",
+            "types": "Types",
+            "entities": "Entities",
+            "template": "Template",
+
+            "associatedTypesPlaceholder": "Search and assign entity types...",
+            "associatedTypesEmptyStateDescription": "No associated entity types assigned",
+            "associatedEntitiesPlaceholder": "Search and assign entities...",
+            "associatedEntitiesEmptyStateDescription": "No associated entities assigned",
+
+            "placeholder": {
+                "name": "Enter entity renderer name...",
+                "slug": "Enter entity renderer slug...",
+                "description": "Enter entity renderer description...",
+                "searchBar": "Search entity renderers..."
+            }
+        }
+    }
+}

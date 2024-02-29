@@ -1,0 +1,116 @@
+{% block ovv_entity_type_detail %}
+<sw-page class="ovv-entity-type-detail">
+
+    {% block ovv_entity_type_detail_header %}
+    <template #smart-bar-header>
+        <h2>{{ title }}</h2>
+    </template>
+    {% endblock %}
+
+    {% block ovv_entity_type_detail_actions %}
+    <template #smart-bar-actions>
+
+        {% block ovv_entity_type_detail_actions_abort %}
+        <sw-button :disabled="isLoading" @click="onCancel">
+            {{ $tc('global.default.cancel') }}
+        </sw-button>
+        {% endblock %}
+
+        {% block ovv_entity_type_detail_actions_save %}
+        <sw-button-process
+            variant="primary"
+            :disabled="!canSave"
+            :process-success="isSaveSuccessful"
+            @process-finish="onSaveFinish"
+            @click="onSave"
+        >
+            {{ $tc('global.default.save') }}
+        </sw-button-process>
+        {% endblock %}
+
+    </template>
+    {% endblock %}
+
+    {% block ovv_entity_type_detail_language_switch %}
+    <template #language-switch>
+        <sw-language-switch
+            :disabled="!canSwitchLanguage"
+            :save-changes-function="saveOnLanguageChange"
+            :abort-change-function="abortOnLanguageChange"
+            :save-permission="canSwitchLanguage"
+            :allow-edit="canSwitchLanguage"
+            @on-change="onChangeLanguage"
+        />
+    </template>
+    {% endblock %}
+
+    {% block ovv_entity_type_detail_content %}
+    <template #content>
+        <sw-card-view>
+
+            {% block ovv_entity_type_detail_language_info %}
+            <sw-language-info
+                v-if="entity"
+                :entity-description="title"
+                :is-new-entity="isNew"
+            />
+            {% endblock %}
+
+            {% block ovv_entity_type_detail_card_id %}
+            <sw-card
+                v-if="cardIdIsVisible"
+                position-identifier="ovv-entity-type-detail-id-card"
+                :is-loading="isLoading"
+            >
+                <div>ID: <strong>{{ entity.autoIncrement }}</strong></div>
+            </sw-card>
+            {% endblock %}
+
+            {% block ovv_entity_type_detail_card_general %}
+            <sw-card
+                v-if="entity"
+                position-identifier="ovv-entity-type-detail-general-card"
+                :is-loading="isLoading"
+            >
+
+                {% block ovv_entity_type_detail_active %}
+                <sw-switch-field
+                    v-model="entity.active"
+                    :label="t('active')"
+                    :disabled="!canEdit"
+                    no-margin-top
+                    bordered
+                />
+                {% endblock %}
+
+                {% block ovv_entity_type_detail_name %}
+                <sw-text-field
+                    v-model="entity.name"
+                    :label="t('name')"
+                    :placeholder="pholder('name')"
+                    :disabled="!canEdit"
+                    :error="entityNameError"
+                    :required="isDefaultLanguage"
+                />
+                {% endblock %}
+
+                {% block ovv_entity_type_detail_slug %}
+                <sw-text-field
+                    v-model="entity.slug"
+                    :label="t('slug')"
+                    :placeholder="pholder('slug')"
+                    :disabled="!canEdit"
+                    :error="entitySlugError"
+                    class="sw-field--no-margin-bottom"
+                />
+                {% endblock %}
+
+            </sw-card>
+            {% endblock %}
+
+        </sw-card-view>
+    </template>
+    {% endblock %}
+
+</sw-page>
+{% endblock %}

@@ -1,0 +1,29 @@
+{
+    "name": "ovv/sw6-plugin-entity",
+    "version": "1.0.0",
+    "description": "Entity",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vazgen Ovakimyan",
+            "homepage": "https://www.linkedin.com/in/vdevx86"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ovv\\Entity\\": "src"
+        }
+    },
+    "require": {
+        "shopware/core": "~6.5.5"
+    },
+    "extra": {
+        "shopware-plugin-class": "Ovv\\Entity\\OvvEntity",
+        "copyright": "Vazgen Ovakimyan",
+        "label": {
+            "de-DE": "Entität",
+            "en-GB": "Entity"
+        }
+    }
+}

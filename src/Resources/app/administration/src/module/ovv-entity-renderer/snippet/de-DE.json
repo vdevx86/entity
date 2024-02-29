@@ -1,0 +1,59 @@
+{
+    "global": {
+        "entities": {
+            "ovv_entity_renderer": "Entität-Renderer | Entität-Renderers"
+        }
+    },
+
+    "sw-privileges": {
+        "permissions": {
+            "ovv_entity_renderer": {
+                "label": "Entität-Renderer"
+            }
+        }
+    },
+
+    "sw-profile": {
+        "tabSearchPreferences": {
+            "modules": {
+                "ovv_entity_renderer": {
+                    "name": "Name",
+                    "description": "Beschreibung"
+                }
+            }
+        }
+    },
+
+    "ovv": {
+        "entityRenderer": {
+            "active": "Activ",
+            "name": "Name",
+            "slug": "Slug",
+            "description": "Beschreibung",
+            "buttonAdd": "Entität-Renderer hinzufügen",
+            "empty": "Noch keine Entität-Renderers",
+            "createdAt": "Erstellt am",
+            "refresh": "Aktualisieren",
+            "entityManage": "Verwalten Sie hier Entität-Renderers",
+            "entityNew": "Neuer Entität-Renderer",
+            "entities": "Entität-Renderers",
+            "entity": "Entität-Renderer",
+            "renderers": "Renderers",
+            "types": "Typen",
+            "entities": "Entitäten",
+            "templates": "Templates",
+
+            "associatedProductsPlaceholder": "Entitätstypen suchen und zuordnen ...",
+            "associatedProductsEmptyStateDescription": "Keine Entitätstyp zugewiesen",
+            "associatedEntitiesPlaceholder": "Entitäten suchen und zuordnen ...",
+            "associatedEntitiesEmptyStateDescription": "Keine Entität zugewiesen",
+
+            "placeholder": {
+                "name": "Gib einen Namen ein ...",
+                "slug": "Gib einen Slug ein ...",
+                "description": "Gib eine Beschreibung ein ...",
+                "searchBar": "Suchen Sie nach Entität-Renderers ..."
+            }
+        }
+    }
+}
